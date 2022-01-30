@@ -1,6 +1,8 @@
 package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.zip.DataFormatException;
 
 public class Mentoria extends Conteudo{
 
@@ -26,11 +28,10 @@ public class Mentoria extends Conteudo{
 
     @Override
     public String toString() {
-        return "Mentoria " +
-                "\ntitulo = " + getTitulo() + '\'' +
-                "\ndescricao = " + getDescricao() + '\'' +
-                "\n data=" + data +
-                '}';
+        return "\n\nMENTORIAS " +
+                "\nTipo de Mentoria = " + getTitulo() +
+                "\ndescricao da mentoria = " + getDescricao() +
+                "\n Data de inscrição = " + data;
     }
 
 

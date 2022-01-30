@@ -1,6 +1,4 @@
-import br.com.dio.desafio.dominio.Conteudo;
-import br.com.dio.desafio.dominio.Curso;
-import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.*;
 
 import java.time.LocalDate;
 
@@ -24,9 +22,55 @@ public class Main {
         mentoria.setData(LocalDate.now());
 
 
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);
+        //System.out.println(curso1);
+        //System.out.println(curso2);
+        //System.out.println(mentoria);
+
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp GFT Start #3");
+        bootcamp.setDescricao("Em busca de Starters");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria);
+
+        Dev devTibio = new Dev();
+        devTibio.setNome("Tíbio");
+        devTibio.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos de Tíbio " + devTibio.getConteudosInscritos());
+        System.out.println();
+
+        devTibio.progredir();
+        devTibio.progredir();
+        devTibio.progredir();
+
+        System.out.println("-");
+
+        System.out.println("Conteúdos Inscritos de Tíbio " + devTibio.getConteudosInscritos());
+        System.out.println();
+
+        System.out.println("Conteúdos Concluídos de Tíbio " + devTibio.getConteudosConcluidos());
+        System.out.println("XP: " + devTibio.calcularTotalXp());
+        System.out.println("----------------------------------------------------------");
+
+        Dev devPeronio = new Dev();
+        devPeronio.setNome("Perônio");
+        devPeronio.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos de Perônio " + devPeronio.getConteudosInscritos());
+        System.out.println();
+
+        devPeronio.progredir();
+
+        System.out.println("-");
+
+        System.out.println("Conteúdos Inscritos de Perônio " + devPeronio.getConteudosInscritos());
+        System.out.println();
+
+        System.out.println("Conteúdos Concluídos de Perônio " + devPeronio.getConteudosConcluidos());
+        System.out.println("XP:" + devPeronio.calcularTotalXp());
+        System.out.println("----------------------------------------------------------");
+
+
+
     }
 
 }
